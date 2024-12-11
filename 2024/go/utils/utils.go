@@ -34,6 +34,23 @@ func ReadFileToMatrix(name string) ([][]string, error) {
 	return matrix, nil
 }
 
+func ReadFileToIntMatrix(name string) ([][]int, error) {
+	file, err := os.Open(name)
+	if err != nil {
+		return nil, err
+	}
+	scn := bufio.NewScanner(file)
+	var matrix [][]int
+	for scn.Scan() {
+    var temp []int
+    for _, b := range scn.Bytes() {
+      temp = append(temp, int(b - '0'))
+    }
+    matrix = append(matrix, temp)
+	}
+	return matrix, nil
+}
+
 func ParseInt(str string) (int64, error) {
 	return strconv.ParseInt(str, 10, 0)
 }
