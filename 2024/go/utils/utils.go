@@ -13,6 +13,7 @@ func ReadFile(name string) ([]string, error) {
 	if err != nil {
 		return nil, err
 	}
+  defer file.Close()
 	scn := bufio.NewScanner(file)
 	var lines []string
 	for scn.Scan() {
@@ -26,6 +27,7 @@ func ReadFileToMatrix(name string) ([][]string, error) {
 	if err != nil {
 		return nil, err
 	}
+  defer file.Close()
 	scn := bufio.NewScanner(file)
 	var matrix [][]string
 	for scn.Scan() {
@@ -39,6 +41,7 @@ func ReadFileToIntMatrix(name string) ([][]int, error) {
 	if err != nil {
 		return nil, err
 	}
+  defer file.Close()
 	scn := bufio.NewScanner(file)
 	var matrix [][]int
 	for scn.Scan() {
