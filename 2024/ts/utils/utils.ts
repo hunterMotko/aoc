@@ -17,3 +17,13 @@ export async function readFileToMatrix(filePath: string, sep = " "): Promise<str
 	}
 	return result
 }
+
+export async function readFileStr(filePath: string): Promise<string[]> {
+	try {
+		const fp = path.join(process.cwd(), 'src', filePath)
+		const file = await readFile(fp, { encoding: 'utf8' })
+		return file.split('\n')
+	} catch (err) {
+		throw err
+	}
+}
