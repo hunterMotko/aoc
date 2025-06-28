@@ -27,3 +27,14 @@ export async function readFileStr(filePath: string): Promise<string[]> {
 		throw err
 	}
 }
+
+export async function readFileNums(filePath: string): Promise<number[]> {
+	try {
+		const fp = path.join(process.cwd(), 'src', filePath)
+		const file = await readFile(fp, { encoding: 'utf8' })
+		let arr = file.split('')
+		return arr.map(Number)
+	} catch (err) {
+		throw err
+	}
+}
