@@ -2,10 +2,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main() {
-  const char *in_path = "days/1/in1";
+int main(int argc, char *argv[]) {
+  const char *path; 
+	(argc > 1) ? path = argv[1] : "ex1";
 
-  FileContent content = parse_by_line(in_path);
+  FileContent content = parse_by_line(path);
   if (content.lines == NULL) {
     fprintf(stderr, "Failed to read file\n");
     return 1;
