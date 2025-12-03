@@ -9,6 +9,7 @@ LIB=lib
 SOURCE = days/$(DAY)/part$(PART).c
 TARGET = $(TARGET_DIR)/days/$(DAY)/part$(PART)
 LIB_FILE = $(LIB)/parse.c
+INPUT_FILE = days/$(DAY)/$(IN)
 
 # --- PHONY Targets ---
 .PHONY: build run clean
@@ -20,7 +21,7 @@ build: $(TARGET_DIR) $(TARGET)
 # 2. RUN: make run DAY=1 PART=1
 run: $(TARGET)
 	@echo "--- Running $(TARGET) ---"
-	@./$(TARGET)
+	@./$(TARGET) $(INPUT_FILE)
 
 # --- Compilation Rule ---
 $(TARGET): $(SOURCE) $(LIB_FILE)

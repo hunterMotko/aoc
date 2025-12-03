@@ -5,9 +5,11 @@
 long int check_is_double(long int n);
 long int check_range_doubles(long int s, long int e);
 
-int main() {
-  const char *in_path = "days/2/in1";
-  FILE *fp = fopen(in_path, "r");
+int main(int argc, char *argv[]) {
+  const char *path; 
+	(argc > 1) ? path = argv[1] : "ex1";
+
+  FILE *fp = fopen(path, "r");
   if (fp == NULL) {
     printf("Error opening file");
   }

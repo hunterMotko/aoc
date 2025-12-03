@@ -6,8 +6,10 @@
 
 int max_joltage(const char *bank);
 
-int main() {
-  FileContent con = parse_by_line("days/3/in");
+int main(int argc, char *argv[]) {
+  const char *path; 
+	(argc > 1) ? path = argv[1] : "ex1";
+  FileContent con = parse_by_line(path);
 
   size_t i = 0;
   long int total = 0;
