@@ -72,7 +72,6 @@ int check_adjacent(char **lines, int yl, int xl, int y, int x) {
         ++adjacents;
     }
   }
-  printf("adjacents: %d\n", adjacents);
   int res = 0;
   if (adjacents < 4) {
 		res = 1;

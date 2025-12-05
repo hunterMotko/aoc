@@ -8,7 +8,7 @@ LIB=lib
 # --- File Paths ---
 SOURCE = days/$(DAY)/part$(PART).c
 TARGET = $(TARGET_DIR)/days/$(DAY)/part$(PART)
-LIB_FILE = $(LIB)/parse.c
+LIB_FILE = $(LIB)/range.c
 INPUT_FILE = days/$(DAY)/$(IN)
 
 # --- PHONY Targets ---
