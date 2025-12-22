@@ -1,7 +1,7 @@
 .DS_Store
 
 **/*.txt
-**/in
-**/ex1
+**/in*
+**/ex*
 **/a.out
 **/2025/c/bin/
